@@ -224,6 +224,89 @@ document.addEventListener('DOMContentLoaded', () => {
     
 //forms
     
+    // const forms = document.querySelectorAll('form');
+    // const message = {
+    //     loading: 'img/spinner.svg',
+    //     success: 'Спасибо! Скоро мы с вами свяжемся',
+    //     failire: 'Что-то пошло не так...',
+    // };
+
+    // forms.forEach(form => {
+    //     postData(form); // подвязываем на каждую форму функцию postData
+    // });
+
+
+    // function postData(form) { // ф отвечает за постинг данных
+    //     form.addEventListener('submit', (event) => {
+    //         event.preventDefault();// убрал инста перезагрузку
+
+    //         let statusMessage = document.createElement('img');
+    //         statusMessage.src = message.loading;
+    //         statusMessage.classList.add('center');
+    //         form.append(statusMessage);//создаем и добавляем сообщению пользователю при загрузке
+
+    //         const request = new XMLHttpRequest();
+           
+    //         request.open('POST', 'server.php');
+    //         request.setRequestHeader('Content-type', 'application/json');
+           
+    //         const formData = new FormData(form);// конструктор внутри которого мы помещаем форму из функции постДата
+
+    //         const object = {};
+    //         formData.forEach((key, value) => {
+    //             object[key] = value; // получаем все данные из formData  в объект для работы с JSON
+    //         });
+
+    //         const json = JSON.stringify(object); // преобразуем строку js в форма JSON
+
+
+    //         request.send(json); //отправка формДата
+
+    //         request.addEventListener('load', () => {
+    //             if (request.status === 200) {
+    //                 console.log(request.response);
+    //                 showThanksModal(message.success); // используем функцию которая показывает удачную отправку пользователя
+    //                 form.reset(); // очищаем данные
+    //                 statusMessage.remove(); // убираем сообщения для польз через 2 сек
+    //                 // setTimeout(() => {
+    //                 //     modal.classList.add('hide');
+    //                 // }, 4000); // мое, убираем форму чтобы не мазолила глаза
+                    
+    //             } else {
+    //                 showThanksModal(message.failire);
+    //            }
+    //         });
+    //     });
+
+    // }
+
+    // function showThanksModal(message) {
+    //     const prevModalDialog = document.querySelector('.modal__dialog');
+ 
+    //     prevModalDialog.classList.add('hide');
+    //     openModal();
+
+    //     const thanksModal = document.createElement('div');
+    //     thanksModal.classList.add('modal__dialog');
+    //     thanksModal.innerHTML = `
+    //     <div class ="modal__content">
+    //         <div class="modal__close data-close">×</div>
+    //         <div class="modal__title">${message}</div>
+    //     </div>
+    //     `;
+
+    //     const thanksInfoModal = document.querySelector('.modal').append(thanksModal);
+        
+    //     document.querySelector('.modal').append(thanksModal);
+    //     setTimeout(() => {
+    //         thanksModal.remove();
+    //         prevModalDialog.classList.add('show');
+    //         prevModalDialog.classList.remove('hide');
+    //         closeModal();
+    //     }, 4000);
+    // }
+    
+
     const forms = document.querySelectorAll('form');
     const message = {
         loading: 'img/spinner.svg',
@@ -245,12 +328,8 @@ document.addEventListener('DOMContentLoaded', () => {
             statusMessage.classList.add('center');
             form.append(statusMessage);//создаем и добавляем сообщению пользователю при загрузке
 
-            const request = new XMLHttpRequest();
-           
-            request.open('POST', 'server.php');
-            request.setRequestHeader('Content-type', 'application/json');
-           
-            const formData = new FormData(form);// конструктор внутри которого мы помещаем форму из функции постДата
+            
+            const formData = new FormData(form);// конструктор внутри которого мы собираем все данные из формы
 
             const object = {};
             formData.forEach((key, value) => {
@@ -259,23 +338,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const json = JSON.stringify(object); // преобразуем строку js в форма JSON
 
+            fetch('server.php', {
+                method: 'POST',
+                body: json,
+                headers: {
+                    'Content-type': 'application/json'
+                }
+            }).then(data => data.text())
+              .then(data => {
+                console.log(data);
+                showThanksModal(message.success); // используем функцию которая показывает удачную отправку пользователя
+                statusMessage.remove(); // убираем сообщения для польз через 2 сек !!отправляем данные
+            }).catch(() => {
+                showThanksModal(message.failire);
+            }).finally(() => {
+                form.reset(); // очищаем данные
+            });       
 
-            request.send(json); //отправка формДата
-
-            request.addEventListener('load', () => {
-                if (request.status === 200) {
-                    console.log(request.response);
-                    showThanksModal(message.success); // используем функцию которая показывает удачную отправку пользователя
-                    form.reset(); // очищаем данные
-                    statusMessage.remove(); // убираем сообщения для польз через 2 сек
-                    // setTimeout(() => {
-                    //     modal.classList.add('hide');
-                    // }, 4000); // мое, убираем форму чтобы не мазолила глаза
-                    
-                } else {
-                    showThanksModal(message.failire);
-               }
-            });
         });
 
     }
@@ -305,7 +384,6 @@ document.addEventListener('DOMContentLoaded', () => {
             closeModal();
         }, 4000);
     }
-    
 
    
 
