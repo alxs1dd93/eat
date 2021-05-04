@@ -1,43 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Food</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-    <header class="header">
-        <div class="header__left-block">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Food</title>
+      <link rel="stylesheet" href="css/style.css" />
+   </head>
+   <body>
+      <header class="header">
+         <div class="header__left-block">
             <div class="header__logo">
-                <a class="logo__link" href="index.html">
-                    <img src="icons/logo.svg" alt="Логотип">
-                </a>
-                
+               <img src="icons/logo.svg" alt="Логотип" />
             </div>
             <nav class="header__links">
-                <a href="index.html" class="header__link">Главная</a>
-                <a href="menu.html" class="header__link">Меню</a>
-                <a href="about.html" class="header__link">О компании</a>
-                <a href="address.html" class="header__link">Наш адрес</a>
+               <a href="index.html" class="header__link">Главная</a>
+               <a href="menu.html" class="header__link">Меню</a>
+               <a href="about.html" class="header__link">О компании</a>
+               <a href="address.html" class="header__link">Наш адрес</a>
             </nav>
-        </div>
-        <div class="header__right-block">
+         </div>
+         <div class="header__right-block">
             <button class="btn btn_white" data-modal>Связаться с нами</button>
-        </div>
-    </header>
-    <div class="sidepanel">
-        <div class="sidepanel__text"><span>Социальные сети</span></div>
-        <div class="sidepanel__divider"></div>
-        <a href="#" class="sidepanel__icon">
-            <img src="icons/instagram.svg" alt="instagram">
-        </a>
-        <a href="#" class="sidepanel__icon">
-            <img src="icons/facebook.svg" alt="facebook">
-        </a>
-    </div>
-
-    <div class="preview">
+         </div>
+      </header>
+      <div class="sidepanel">
+         <div class="sidepanel__text"><span>Социальные сети</span></div>
+         <div class="sidepanel__divider"></div>
+         <a href="#" class="sidepanel__icon">
+            <img src="icons/instagram.svg" alt="instagram" />
+         </a>
+         <a href="#" class="sidepanel__icon">
+            <img src="icons/facebook.svg" alt="facebook" />
+         </a>
+      </div>
+      <div class="container">
+         <div class="address__map">
+            <div class="address__map-info">
+               <p class="address__map-contacts">
+                  Доставка правильного питания «FOOD» Томск, ул. Ленина, 84
+               </p>
+               <div class="address__map--tel-email">
+                  <a class="address__map-tel" href="mailto:food24@yandex.ru"> food24@yandex.ru </a>
+                  <a class="address__map-email" href="tel:+79183827980">+7-918-382-7980</a>
+               </div>
+            </div>
+            <script
+               type="text/javascript"
+               charset="utf-8"
+               async
+               src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Aba7bbcc45a4e6d41451b0c80ca86d3b557d3a926ca0d6f4ca4da41c720718f99&amp;width=862&amp;height=438&amp;lang=ru_RU&amp;scroll=true"
+            ></script>
+         </div>
+      </div>
+      <!-- <div class="preview">
         <div class="bgc_blue"></div>
         <div class="container">
             <div class="tabcontainer">
@@ -77,11 +92,11 @@
             </div>
             <div class="preview__life">Живи полной жизнью!</div>
         </div>
-    </div>
+    </div> -->
 
-    <div class="divider"></div>
+      <div class="divider"></div>
 
-    <div class="offer">
+      <!-- <div class="offer">
         <div class="bgc_y"></div>
         <div class="container">
             <div class="offer__text">
@@ -135,11 +150,11 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
-    <div class="divider"></div>
+      <!-- <div class="divider"></div> -->
 
-    <div class="calculating">
+      <!-- <div class="calculating">
         <div class="container">
             <h2 class="title">Рассчитаем вашу потребность в калориях?
             </h2>
@@ -183,48 +198,16 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
-    <div class="divider"></div>
+      <!-- <div class="divider"></div> -->
 
-    <div class="menu">
+      <!-- <div class="menu">
         <h2 class="title">Наше меню на день</h2>
 
         <div class="menu__field">
             <div class="container">
-                <div class="menu__item">
-                    <img src="img/tabs/vegy.jpg" alt="vegy">
-                    <h3 class="menu__item-subtitle">Меню "Фитнес"</h3>
-                    <div class="menu__item-descr">Меню "Фитнес" - это новый подход к приготовлению блюд: больше свежих овощей и фруктов. Продукт активных и здоровых людей. Это абсолютно новый продукт с оптимальной ценой и высоким качеством!</div>
-                    <div class="menu__item-divider"></div>
-                    <div class="menu__item-price">
-                        <div class="menu__item-cost">Цена:</div>
-                        <div class="menu__item-total"><span>229</span> грн/день</div>
-                    </div>
-                    <button class="menu__btn">Купить</button>
-                </div>
-                <div class="menu__item">
-                    <img src="img/tabs/elite.jpg" alt="elite">
-                    <h3 class="menu__item-subtitle">Меню “Премиум”</h3>
-                    <div class="menu__item-descr">В меню “Премиум” мы используем не только красивый дизайн упаковки, но и качественное исполнение блюд. Красная рыба, морепродукты, фрукты - ресторанное меню без похода в ресторан!</div>
-                    <div class="menu__item-divider"></div>
-                    <div class="menu__item-price">
-                        <div class="menu__item-cost">Цена:</div>
-                        <div class="menu__item-total"><span>550</span> грн/день</div>
-                    </div>
-                    <button class="menu__btn">Купить</button>
-                </div>
-                <div class="menu__item">
-                    <img src="img/tabs/post.jpg" alt="post">
-                    <h3 class="menu__item-subtitle">Меню "Постное"</h3>
-                    <div class="menu__item-descr">Меню “Постное” - это тщательный подбор ингредиентов: полное отсутствие продуктов животного происхождения, молоко из миндаля, овса, кокоса или гречки, правильное количество белков за счет тофу и импортных вегетарианских стейков. </div>
-                    <div class="menu__item-divider"></div>
-                    <div class="menu__item-price">
-                        <div class="menu__item-cost">Цена:</div>
-                        <div class="menu__item-total"><span>430</span> грн/день</div>
-                    </div>
-                    <button class="menu__btn">Купить</button>
-                </div>
+
             </div>
         </div>
     </div>
@@ -277,39 +260,51 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
-    <footer class="footer">
-        <div class="container">
+      <footer class="footer">
+         <div class="container">
             <div class="social">
-                <div class="subtitle">Мы в социальных сетях:</div>
-                <a href="#" class="link">instagram</a>
-                <a href="#" class="link">facebook</a>
+               <div class="subtitle">Мы в социальных сетях:</div>
+               <a href="#" class="link">instagram</a>
+               <a href="#" class="link">facebook</a>
             </div>
             <div class="pepper">
-                <img src="icons/veg.svg" alt="pepper">
+               <img src="icons/veg.svg" alt="pepper" />
             </div>
             <div class="call">
-                <div class="subtitle">Или позвоните нам</div>
-                <a href="#" class="link">+380678341034</a>
-                <a href="#" class="link">+380500941356</a>
+               <div class="subtitle">Или позвоните нам</div>
+               <a href="#" class="link">+380678341034</a>
+               <a href="#" class="link">+380500941356</a>
             </div>
-        </div>
-    </footer>
+         </div>
+      </footer>
 
-    <div class="modal">
-        <div class="modal__dialog">
+      <div class="modal">
+         <div class="modal__dialog">
             <div class="modal__content">
-                <form action="#">
-                    <div class="modal__close" data-close>&times;</div>
-                    <div class="modal__title">Мы свяжемся с вами как можно быстрее!</div>
-                    <input required placeholder="Ваше имя" name="name" type="text" class="modal__input">
-                    <input required placeholder="Ваш номер телефона" name="phone" type="phone" class="modal__input">
-                    <button class="btn btn_dark btn_min">Перезвонить мне</button>
-                </form>
+               <form action="#">
+                  <div class="modal__close" data-close>&times;</div>
+                  <div class="modal__title">Мы свяжемся с вами как можно быстрее!</div>
+                  <input
+                     required
+                     placeholder="Ваше имя"
+                     name="name"
+                     type="text"
+                     class="modal__input"
+                  />
+                  <input
+                     required
+                     placeholder="Ваш номер телефона"
+                     name="phone"
+                     type="phone"
+                     class="modal__input"
+                  />
+                  <button class="btn btn_dark btn_min">Перезвонить мне</button>
+               </form>
             </div>
-        </div>
-    </div>
-    <script src="js/script.js"></script>
-</body>
+         </div>
+      </div>
+      <script src="js/script.js"></script>
+   </body>
 </html>
