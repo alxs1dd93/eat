@@ -64,7 +64,7 @@ a {
 
 .header {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
     height: 150px;
     padding: 0 100px
@@ -73,7 +73,7 @@ a {
 .header__left-block {
     display: flex;
     justify-content: space-between;
-    min-width: 550px
+    min-width: 550px;
 }
 
 .header__logo {
@@ -770,7 +770,9 @@ a {
     max-width: 1000px;
     margin: 100px;
 }
-.about__info-text {
+
+
+.about__info p {
     margin-top: 20px;
     font-size: 18px;
     font-weight: 300;
@@ -780,6 +782,7 @@ a {
     margin-bottom: 50px;
     letter-spacing: 3px;
 }
+
 
 .about__info-img {
     width: 800px;
@@ -820,3 +823,114 @@ a {
     color: #000;
     text-decoration: underline;
 }
+
+.menu__right--basket {
+    position: relative;
+}
+.basket__number {
+    position: absolute;
+    top: 3px;
+    right: -26px; 
+    display: block;
+    width: 30px;
+    height: 30px;
+    background-color: #fb565a;
+    z-index: 2;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    border-radius: 100%;
+    color: white;
+}
+
+.menu__right {
+    font-weight: 700;
+    font-size: 18px;
+    color: #303030;
+    border-bottom: 8px solid #54ed39;
+    margin-bottom: -5px;
+    position: relative;
+    top: -8px;
+    margin-right: 5px;
+}
+
+
+.login-form input::-webkit-input-placeholder,
+.login-form textarea::-webkit-input-placeholder {
+  color: #444444;
+  opacity: 0.5;
+}
+
+.login-form input::-moz-placeholder,
+.login-form textarea::-moz-placeholder {
+  color: #444444;
+  opacity: 0.5;
+}
+
+.login-form input:-ms-input-placeholder,
+.login-form textarea:-ms-input-placeholder {
+  color: #444444;
+  opacity: 0.5;
+}
+
+.login-form input::-ms-input-placeholder,
+.login-form textarea::-ms-input-placeholder {
+  color: #444444;
+  opacity: 0.5;
+}
+
+.login-form input::placeholder,
+.login-form textarea::placeholder {
+  color: #444444;
+  opacity: 0.5;
+}
+
+.login-form input:hover,
+.login-form textarea:hover {
+  border-color: #b4b9bb;
+}
+
+.login-form input:focus,
+.login-form textarea:focus {
+  border-color: #000000;
+}
+
+.form-login {
+    margin: 0 auto;
+    background-color: #fff;
+    width: 960px;
+    padding-top: 73px;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-bottom: 85px;
+    -webkit-box-shadow: 0 20px 40px 0 rgb(0 1 1 / 75%);
+    box-shadow: 0 20px 40px 0 rgb(0 1 1 / 75%);
+}
+
+.login-form input[type="text"], .login-form input[type="password"] {
+    font: inherit;
+    color: #000000;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 300px;
+    border: 2px solid #d7dcde;
+    border-radius: 4px;
+    padding: 13px;
+    margin-top: 10px;
+}
+
+.column-communication p:first-child {
+    margin-bottom: 70px;
+}
+.column-communication p:nth-child(2) {
+    margin-bottom: 90px;
+}
+
+.btn-reg {
+    margin-bottom: 190px;
+}
+
+.reg__title {
+    margin-bottom: 50px;
+}
+
